@@ -21,7 +21,7 @@ Verify that you can connect to the cluster with commands like `kubectl cluster-i
 
 For this demo, the open source [StackGres](https://stackgres.io) platform will be used. It provides a very easy way to boostrap a Babelfish server on EKS.
 
-Then you can proceed to install StackGres with Helm:
+Once you have an EKS cluster you can proceed to install StackGres with Helm:
 
 ```sh
 helm repo add stackgres-charts https://stackgres.io/downloads/stackgres-k8s/stackgres/helm/
@@ -37,7 +37,7 @@ Note that the above command will create an AWS Load Balancer (which will incur i
 kubectl -n stackgres get svc --field-selector metadata.name=stackgres-restapi  
 ```
 
-The URL will be ``https://` followed by the DNS name specified in the `EXTERNAL-IP` field of the output of the previous command. Open it on a browser and accept the security risks (it's normal, it is using a self-signed SSL certificate).
+The URL will be `https://` followed by the DNS name specified in the `EXTERNAL-IP` field of the output of the previous command. Open it on a browser and accept the security risks (it's normal, it is using a self-signed SSL certificate).
 
 The username is `admin`, the password can be retrieved with:
 
